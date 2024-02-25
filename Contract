@@ -1,0 +1,31 @@
+pub contract challenge
+{
+pub var cars: {Address:car}
+//
+//Deploy a new contract that has a Struct of your choosing inside of it.
+//
+  pub struct car 
+  {
+    pub let model: String
+    pub let year: UInt
+    pub let owner: Address
+  
+    init(_model: String, _year: UInt, _owner: Address)
+     {
+        self.model = _model
+        self.year = _year
+        self.owner = _owner
+     }
+  } 
+  //
+  //Create a function to add to that array/dictionary.
+  //
+  pub fun carone(model: String, year: UInt, owner: Address)
+  {
+      let cartwo =car(_model: model, _year: year, _owner: owner)
+      self.cars[owner]=cartwo
+  }
+   init() {
+        self.cars = {}
+    }
+}
